@@ -3,23 +3,13 @@ import React from "react";
 import {StatusBar} from "expo-status-bar";
 import {Link} from "expo-router";
 
+
 export default function App(){
     return (
-        <View style={styles.container}>
-            <Text>Root</Text>
+        <View className="flex-1 items-center justify-center bg-white">
+            <Text className="text-3xl font-pregular">Aora</Text>
             <StatusBar style="auto"/>
-            <Link href= "/profile" style={{ color: 'blue'}} >Go to profile</Link>
+            <Link href= "/(tabs)/profile" style={{ color: 'blue'}} >Go to profile</Link>
         </View>
     )
 }
-
-
-
-const styles = StyleSheet.create({
-    container: {
-        display: 'flex',
-        flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center',
-    }
-})
