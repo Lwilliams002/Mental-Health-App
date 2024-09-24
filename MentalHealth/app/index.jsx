@@ -2,14 +2,18 @@ import {StyleSheet, Text, View} from 'react-native';
 import React from "react";
 import {StatusBar} from "expo-status-bar";
 import {Link} from "expo-router";
+import Icon from 'react-native-vector-icons/Entypo';
 
 
 export default function App(){
     return (
+
         <View className="flex-1 items-center justify-center bg-white">
-            <Text className="text-3xl font-pregular">Aora</Text>
+            <Text className="text-3xl font-pregular">HomeScreen</Text>
             <StatusBar style="auto"/>
-            <Link href= "/(tabs)/profile" style={{ color: 'blue'}} >Go to profile</Link>
+            <Link className= "absolute top-10 left-2" href= "/(tabs)/profile"  >
+                <Icon name="menu" size={24} color="black" />
+            </Link>
         </View>
     )
 }

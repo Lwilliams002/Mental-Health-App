@@ -1,23 +1,26 @@
-import {View, Text, StyleSheet} from 'react-native';
-import React from 'react';
-import {Tabs, Redirect} from "expo-router";
-import Home from "./home";
+import { Stack } from 'expo-router';
 
-const TabsLayout = () => {
+export default function Layout() {
     return (
-        <>
-            <Tabs>
-                <Tabs.Screen
-                    name="home"
-                    options={{
-                        title: 'Home',
-                        headerShown: false,
-                    }}
-                    component={Home}
-                />
-            </Tabs>
-        </>
-    )
+        <Stack
+            screenOptions={{
+                headerShown: false,
+            }}
+        >
+            <Stack.Screen
+                name= "profile"
+                options={{
+                    headerShown: true, // Show header only on Profile screen
+                    headerBackTitleVisible: false,
+                    headerTitle: '',
+                    headerStyle: {
+                        elevation: 0,
+                        shadowOpacity: 0,
+                        backgroundColor: 'white',
+                    },
+                }}
+            />
+            {/* Other screens */}
+        </Stack>
+    );
 }
-
-export default TabsLayout;
